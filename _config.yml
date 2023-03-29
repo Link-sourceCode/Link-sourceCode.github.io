@@ -29,9 +29,11 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Link-sourceCode
 
 # Build settings
-theme: minima
+#theme: minima
+remote_theme: vaibhavvikas/jekyll-theme-minimalistic
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
