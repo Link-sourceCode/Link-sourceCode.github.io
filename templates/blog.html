@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Blog</h1>
+<br>
+<p>Click <a href="/home">here</a> to go home.</p>
+
+<br><br>
+<h3>Posts:</h3>
+{% for post in posts %}
+	<strong>Title:</strong> {{ post.title }} <br>
+	<strong>Autor:</strong> {{ post.autor }} <br>
+<br>
+{% endfor %}
+
+{% endblock %}

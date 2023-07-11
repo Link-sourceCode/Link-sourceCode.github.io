@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Apokalypse</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="dsa, blog, apokalypse, diskussion, gruppe">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/bootstrap.min.css"  media="screen">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <style>
+    body {
+    background: #1D1E22;
+    color: #eee;
+    }
+    h1, h3{
+	    color: #eee;
+    }
+    .topnav {
+	    background-color: #333;
+	    overflow: hidden;
+      }
+      
+      .topnav a {
+	      float: left;
+	      color: #f2f2f2;
+        text-align: center;
+	      padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      
+      .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+      }
+  </style>
+
+  <body>
+    <div class="topnav">
+      <a class="active" href="/home">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/board">Schwarzes Brett</a>
+      <a href="/files">File Sharing</a>
+      <a href="/logout">Ausloggen</a>
+    </div>
+    <br>
+    <div class="container">
+
+      <!-- child template -->
+      {% block content %}{% endblock %}
+
+      <!-- errors -->
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+
+      <!-- messages -->
+      {% for message in get_flashed_messages() %}
+        {{ message }}
+      {% endfor %}
+    </div>
+
+  </body>
+</html>

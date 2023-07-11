@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+<link rel="stylesheet" href="style.css">
+{% block content %}
+
+<style>
+	
+	table {
+	    border-collapse: collapse;
+	    width: 100%;
+	}
+	th, td {
+	    border: 1px solid rgb(255, 255, 255);
+	    padding: 8px;
+	    text-align: left;
+	}
+	th {
+	    background-color: #333;
+	}
+</style>
+
+<h1>Willkomen Reiter:in!</h1>
+<br>
+
+<h3>User:</h3>
+
+
+<table>
+	<tr>
+	    <th>Reiter:innen</th>
+	</tr>
+    
+	{% for user in users %}
+	<tr>
+	    <td>{{ user.name }}</td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+<table>
+	<tr>
+	    <th>Reiter:in</th>
+	    <th>Stadt</th>
+	</tr>
+    
+	{% for stadt in staedte %}
+	<tr>
+	    <td>{{ stadt.name }}</td>
+	    <td>{{ stadt.stadt }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+{% endblock %}
